@@ -1,0 +1,997 @@
+Delivered-To: 201b244@juetguna.in
+Received: by 2002:a05:651c:2212:0:0:0:0 with SMTP id y18csp364602ljq;
+        Thu, 4 Aug 2022 06:54:58 -0700 (PDT)
+X-Google-Smtp-Source: AA6agR6Oh8fEAi7ensFYkjapghAbUEziBFkhXih2VxUu+3nFlhAb9l9vHo8WoLZV7fYw3oMXOp4q
+X-Received: by 2002:a05:622a:60c:b0:33c:f53b:7172 with SMTP id z12-20020a05622a060c00b0033cf53b7172mr1586416qta.438.1659621297794;
+        Thu, 04 Aug 2022 06:54:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1659621297; cv=none;
+        d=google.com; s=arc-20160816;
+        b=foBrk06OVJkHuPlcLojKQQ+7sAXNJC9lpFHiwDVWYdqBsFXroPeCXNKsZnrHxCLC9h
+         8F7UXOqqKyFWfajhJKdVWkJm33gCL9OPmLftLbBASTdZjOcbSY54kBroS9e/FONk2LKp
+         ENRD/XoMv98Bt4Qa0kKK5fa6yZ/LtLHp9ONxV5+MVCBtxTQ1c0DSWnKBzODMmZRn8ZN3
+         qjGby8l3wIpbCR5R+KgedxxoTm8VbFyx+Mtfv3oNzTGCtPIlBpFsUxlG/ao8sFQHjFQO
+         9418A2mj4x6+svX/CD0QKScYBdze98lQ+IcnFOReOxeFRNPE6xBrRksnJxmrGITBVrY9
+         YHEQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe-post:list-unsubscribe
+         :content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature:dkim-signature;
+        bh=78Kczzit05trSRLZ4IKvQ2zqQQijp5WyuwnRujjAAYE=;
+        b=YMtdwOBUMGrufN3zhEFilpoeh0eD8iU9naSfZqTqHpx3fdre9lzz4hrOijqAsDSaCn
+         CcCXUwp8d6xnb5QZFR+4tV9IDyICUZaf9KBMIBDM+esAQWwHTNhchnV2oVOgYLpuUczO
+         ofFaUZ5RBb5RXou3htT7ifWp4AKUemehIJYsT80WpAIU5L1jPZneCuDKhfaRGpOTcN8I
+         R7+X9rfqZEJ6hBP0399myK+GaEkWJ9HZ/GRvA64W4mMOxzmU9lqMslxnyX21coNGAAmr
+         pzVZt3zotR3YFgJLXcnHdWq6w7pkovHn5taFBUFZpJDp64YqHtKsgyxi6/zVv4OS3OOA
+         JLhQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@academia-mail.com header.s=4vua5mvwhuogm74j2yjeer7iai2cp5nr header.b=ghXmLS0R;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=EqyzNO7q;
+       spf=pass (google.com: domain of 0100018269234b6d-b1042cb3-1153-4622-baed-9f593410a115-000000@bounce.academia-mail.com designates 54.240.30.183 as permitted sender) smtp.mailfrom=0100018269234b6d-b1042cb3-1153-4622-baed-9f593410a115-000000@bounce.academia-mail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=academia-mail.com
+Return-Path: <0100018269234b6d-b1042cb3-1153-4622-baed-9f593410a115-000000@bounce.academia-mail.com>
+Received: from a30-183.smtp-out.amazonses.com (a30-183.smtp-out.amazonses.com. [54.240.30.183])
+        by mx.google.com with ESMTPS id x20-20020a05620a449400b006b603271b5asi714048qkp.119.2022.08.04.06.54.57
+        for <201B244@juetguna.in>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 04 Aug 2022 06:54:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018269234b6d-b1042cb3-1153-4622-baed-9f593410a115-000000@bounce.academia-mail.com designates 54.240.30.183 as permitted sender) client-ip=54.240.30.183;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@academia-mail.com header.s=4vua5mvwhuogm74j2yjeer7iai2cp5nr header.b=ghXmLS0R;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=EqyzNO7q;
+       spf=pass (google.com: domain of 0100018269234b6d-b1042cb3-1153-4622-baed-9f593410a115-000000@bounce.academia-mail.com designates 54.240.30.183 as permitted sender) smtp.mailfrom=0100018269234b6d-b1042cb3-1153-4622-baed-9f593410a115-000000@bounce.academia-mail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=academia-mail.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=4vua5mvwhuogm74j2yjeer7iai2cp5nr; d=academia-mail.com;
+	t=1659621297;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe:List-Unsubscribe-Post;
+	bh=OYBRwlEGNGszrfC2J6rfwvVeT6Xj2DXF4ovjyIVtV6Y=;
+	b=ghXmLS0RpwIU1PbcyKVRPH9/wP5TDQ8jXTFpD6SrdAUP+VALh20JLM4EP1/gtKd+
+	8+Iu9RKSopEs1c/ZcU9D17m1vMAlNyPkG06k/JjnJYqZQwk8VuMttI/OBHgHwxrvXv2
+	YtYlg4vD90jxQwX0K2pmXyXd+cLLdET9d55kEgBw=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1659621297;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe:List-Unsubscribe-Post:Feedback-ID;
+	bh=OYBRwlEGNGszrfC2J6rfwvVeT6Xj2DXF4ovjyIVtV6Y=;
+	b=EqyzNO7q637/MkXEZXxj7R4xz8qaCIhxwM53iTuT++NvprUURZh5UYzphu028aJU
+	AEelqWgEiC2FhEX72x1FWmjiQxkz8s208ltGBuaSlSS4mdxOMPtkhpOJejIWwvTmUgR
+	u8trw4V3wtjPNs2rb92FPtu7S6mialzPAKe/bGas=
+Date: Thu, 4 Aug 2022 13:54:57 +0000
+From: "Academia.edu" <premium@academia-mail.com>
+To: 201B244@juetguna.in
+Message-ID: <0100018269234b6d-b1042cb3-1153-4622-baed-9f593410a115-000000@email.amazonses.com>
+Subject: Bulk Download 37 books in "Computer Networks"
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62ebcfb04321f_134670683514";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+x-tracking-token: rKav9-QvyrdSg-bwm7Q6
+x-campaignid: bulk_download_books_drip
+List-Unsubscribe: <mailto:unsubscribe@academia-noreply.com?subject=VWpZVUlzZC9razZYeVA4RnU3UDI5VjVXaktsREZ1T3I1YnI3bVNBaHFCK2hnZ2tneWRDRjZSR1haMUhTbHBGM3FqaU5CWXBEZUtDeCtoTTNpazdjZ0dYM29sNE85M3phbXdGUlczSHVxSm9nZ3Q1Zk9kOUVBQ0ZrWFVmeVNyTFZiNkdpSTBWR1NJYTBOeUZRUURkNE1zZWlzay9qZGgrRFUxRmxFaWo1VkVYamVLRit6eHNhQUY0NzJUTW5BakhoLS1sREJlNFFCai80eGdmaWU3RXgzWEZ3PT0=--c3a981eef67605e53fd61c7513b89a71ba03584e>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 1.us-east-1.+D6yPXNQsonfrDMv/Fmi8P0+JMZ6ZUD6kklooEAhQUc=:AmazonSES
+X-SES-Outgoing: 2022.08.04-54.240.30.183
+
+
+----==_mimepart_62ebcfb04321f_134670683514
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Satyam,
+
+Bulk Download 37 books in Computer Networks: https://www.academia.edu/keypass/R2JYVURaK2Q5eTIrSDZaSTNxT2gxUHdCV2hFNk9qR2xKWW02N2NEbmFGbz0tLWxQRXprclorZVVHdlN1Z0Vib0t0L1E9PQ==--3557f78c87d955a369d4ef843b739dc06ac4593f/t/rKav9-QvyrdSg-bwm7Q6/upgrade?feature=bd_books&ri=4252&trigger=bulk-download-books-drip&upgrade_redirect=https%3A%2F%2Fwww.academia.edu%2Ft%2FrKav9-QvyrdSg-bwm7Q6%2Fsearch%3Fauto_bd_books%3Dtrue%26q%3D%252A%26ri_ids%3D4252
+
+-----
+
+Follow the link below to disable these notifications:
+
+https://academia.edu/keypass/R2JYVURaK2Q5eTIrSDZaSTNxT2gxUHdCV2hFNk9qR2xKWW02N2NEbmFGbz0tLWxQRXprclorZVVHdlN1Z0Vib0t0L1E9PQ==--3557f78c87d955a369d4ef843b739dc06ac4593f/t/rKav9-QvyrdSg-bwm7Q6/confirm_unsubscribe/premium_content
+
+Academia.edu, 580 California St., Suite 400, San Francisco, CA, 94104
+
+----==_mimepart_62ebcfb04321f_134670683514
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o=
+rg/TR/xhtml1/DTD/xhtml1-strict.dtd">=0D
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns=3D"http://www.w3.org/1=
+999/xhtml" style=3D"min-height: 100%; background-color: #f3f3f3;">=0D
+<head>=0D
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type" =
+/>=0D
+<meta content=3D"width=3Ddevice-width" name=3D"viewport" />=0D
+=0D
+<style>.u-hover-bgColorAqua:hover {=0D
+background-color: cyan !important;=0D
+}=0D
+.u-hover-bgColorBlue:hover {=0D
+background-color: #0954D3 !important;=0D
+}=0D
+.u-hover-bgColorBlueLight:hover {=0D
+background-color: #99B1C4 !important;=0D
+}=0D
+.u-hover-bgColorBlueLighter:hover {=0D
+background-color: #c3d2dd !important;=0D
+}=0D
+.u-hover-bgColorBlueLightest:hover {=0D
+background-color: #eff3f6 !important;=0D
+}=0D
+.u-hover-bgColorGreen:hover {=0D
+background-color: #1A8A20 !important;=0D
+}=0D
+.u-hover-bgColorRed:hover {=0D
+background-color: #e83a30 !important;=0D
+}=0D
+.u-hover-bgColorOrange:hover {=0D
+background-color: #e86830 !important;=0D
+}=0D
+.u-hover-bgColorYellow:hover {=0D
+background-color: #e8b730 !important;=0D
+}=0D
+.u-hover-bgColorPurple:hover {=0D
+background-color: #8400bc !important;=0D
+}=0D
+.u-hover-bgColorWhite:hover {=0D
+background-color: #fff !important;=0D
+}=0D
+.u-hover-bgColorBlack:hover {=0D
+background-color: #000 !important;=0D
+}=0D
+.u-hover-bgColorGrayDarkest:hover {=0D
+background-color: #4b4b4b !important;=0D
+}=0D
+.u-hover-bgColorGrayDarker:hover {=0D
+background-color: #777 !important;=0D
+}=0D
+.u-hover-bgColorGrayDark:hover {=0D
+background-color: #999 !important;=0D
+}=0D
+.u-hover-bgColorGray:hover {=0D
+background-color: #ccc !important;=0D
+}=0D
+.u-hover-bgColorGrayLight:hover {=0D
+background-color: #ddd !important;=0D
+}=0D
+.u-hover-bgColorGrayLighter:hover {=0D
+background-color: #f1f1f1 !important;=0D
+}=0D
+.u-hover-bgColorGrayLightest:hover {=0D
+background-color: #f8f8f8 !important;=0D
+}=0D
+.u-hover-bgColorPremium:hover {=0D
+background-color: #f67e00 !important;=0D
+}=0D
+.u-hover-bgColorTransparent:hover {=0D
+background-color: transparent !important;=0D
+}=0D
+.u-hover-bgColorGoogleRed:hover {=0D
+background-color: #dc4b38 !important;=0D
+}=0D
+.u-hover-bgColorGoogle:hover {=0D
+background-color: #4285F4 !important;=0D
+}=0D
+.u-hover-bgColorGreenDiscount:hover {=0D
+background-color: #4BC012 !important;=0D
+}=0D
+.u-hover-bgColorGreenPremium:hover {=0D
+background-color: #4BC012 !important;=0D
+}=0D
+.u-hover-bgColorBlueStudent:hover {=0D
+background-color: #288AE2 !important;=0D
+}=0D
+.u-hover-bgColorReefGold:hover {=0D
+background-color: #AD9333 !important;=0D
+}=0D
+.u-hover-opacity0_5:hover {=0D
+opacity: .5 !important;=0D
+}=0D
+.u-hover-opacity1:hover {=0D
+opacity: 1 !important;=0D
+}=0D
+.u-onHover-tcAqua:hover {=0D
+color: cyan !important;=0D
+}=0D
+.u-onHover-tcBlue:hover {=0D
+color: #0954D3 !important;=0D
+}=0D
+.u-onHover-tcBlueLight:hover {=0D
+color: #99B1C4 !important;=0D
+}=0D
+.u-onHover-tcBlueLighter:hover {=0D
+color: #c3d2dd !important;=0D
+}=0D
+.u-onHover-tcBlueLightest:hover {=0D
+color: #eff3f6 !important;=0D
+}=0D
+.u-onHover-tcGreen:hover {=0D
+color: #1A8A20 !important;=0D
+}=0D
+.u-onHover-tcRed:hover {=0D
+color: #e83a30 !important;=0D
+}=0D
+.u-onHover-tcOrange:hover {=0D
+color: #e86830 !important;=0D
+}=0D
+.u-onHover-tcYellow:hover {=0D
+color: #e8b730 !important;=0D
+}=0D
+.u-onHover-tcPurple:hover {=0D
+color: #8400bc !important;=0D
+}=0D
+.u-onHover-tcWhite:hover {=0D
+color: #fff !important;=0D
+}=0D
+.u-onHover-tcBlack:hover {=0D
+color: #000 !important;=0D
+}=0D
+.u-onHover-tcGrayDarkest:hover {=0D
+color: #4b4b4b !important;=0D
+}=0D
+.u-onHover-tcGrayDarker:hover {=0D
+color: #777 !important;=0D
+}=0D
+.u-onHover-tcGrayDark:hover {=0D
+color: #999 !important;=0D
+}=0D
+.u-onHover-tcGray:hover {=0D
+color: #ccc !important;=0D
+}=0D
+.u-onHover-tcGrayLight:hover {=0D
+color: #ddd !important;=0D
+}=0D
+.u-onHover-tcGrayLighter:hover {=0D
+color: #f1f1f1 !important;=0D
+}=0D
+.u-onHover-tcGrayLightest:hover {=0D
+color: #f8f8f8 !important;=0D
+}=0D
+.u-onHover-tcPremium:hover {=0D
+color: #f67e00 !important;=0D
+}=0D
+.u-onHover-tcTransparent:hover {=0D
+color: transparent !important;=0D
+}=0D
+.u-onHover-tcGoogleRed:hover {=0D
+color: #dc4b38 !important;=0D
+}=0D
+.u-onHover-tcGoogle:hover {=0D
+color: #4285F4 !important;=0D
+}=0D
+.u-onHover-tcGreenDiscount:hover {=0D
+color: #4BC012 !important;=0D
+}=0D
+.u-onHover-tcGreenPremium:hover {=0D
+color: #4BC012 !important;=0D
+}=0D
+.u-onHover-tcBlueStudent:hover {=0D
+color: #288AE2 !important;=0D
+}=0D
+.u-onHover-tcReefGold:hover {=0D
+color: #AD9333 !important;=0D
+}=0D
+.u-textDecorationLink:hover {=0D
+text-decoration: underline !important; cursor: pointer;=0D
+}=0D
+.u-textDecorationNone:hover {=0D
+text-decoration: none !important;=0D
+}=0D
+.u-linkUnstyled:hover {=0D
+color: inherit; cursor: pointer;=0D
+}=0D
+.u-commaList&gt;li:only-of-type:before {=0D
+content: ''; padding: 0;=0D
+}=0D
+.u-commaList&gt;li:only-of-type:after {=0D
+content: ''; padding: 0;=0D
+}=0D
+.u-commaList&gt;li:after {=0D
+content: ', '; padding-right: 0;=0D
+}=0D
+.u-commaList&gt;li:last-child:after {=0D
+content: ''; clear: both;=0D
+}=0D
+.u-showOnFocus:focus {=0D
+position: static; width: auto; height: auto;=0D
+}=0D
+body {=0D
+width: 100% !important; min-width: 100%; -webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; margin: 0; padding: 0; box-sizing: border-box=
+;=0D
+}=0D
+.ExternalClass {=0D
+width: 100%;=0D
+}=0D
+.ExternalClass {=0D
+line-height: 100%;=0D
+}=0D
+#backgroundTable {=0D
+margin: 0; padding: 0; width: 100% !important; line-height: 100% !importa=
+nt;=0D
+}=0D
+img {=0D
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; wi=
+dth: auto; max-width: 100%; clear: both; display: block;=0D
+}=0D
+body {=0D
+color: #000; font-family: Helvetica,Arial,sans-serif; font-weight: normal=
+; padding: 0; margin: 0; text-align: left; line-height: 150%;=0D
+}=0D
+body {=0D
+font-size: 16px; line-height: 150%;=0D
+}=0D
+a:hover {=0D
+color: #0741a2;=0D
+}=0D
+a:active {=0D
+color: #0741a2;=0D
+}=0D
+a:visited {=0D
+color: #0954D3;=0D
+}=0D
+h1 a:visited {=0D
+color: #0954D3;=0D
+}=0D
+h2 a:visited {=0D
+color: #0954D3;=0D
+}=0D
+h3 a:visited {=0D
+color: #0954D3;=0D
+}=0D
+h4 a:visited {=0D
+color: #0954D3;=0D
+}=0D
+h5 a:visited {=0D
+color: #0954D3;=0D
+}=0D
+h6 a:visited {=0D
+color: #0954D3;=0D
+}=0D
+table.button:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.tiny:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.tiny:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.tiny table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.small:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.small:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.small table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.large:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.large:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.large table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button:hover table td {=0D
+background: #0741a2; color: #fefefe;=0D
+}=0D
+table.button:visited table td {=0D
+background: #0741a2; color: #fefefe;=0D
+}=0D
+table.button:active table td {=0D
+background: #0741a2; color: #fefefe;=0D
+}=0D
+table.button:hover table a {=0D
+border: 0 solid #0741a2;=0D
+}=0D
+table.button:visited table a {=0D
+border: 0 solid #0741a2;=0D
+}=0D
+table.button:active table a {=0D
+border: 0 solid #0741a2;=0D
+}=0D
+table.button.secondary:hover table td {=0D
+background: #919191; color: #fefefe;=0D
+}=0D
+table.button.secondary:hover table a {=0D
+border: 0 solid #919191;=0D
+}=0D
+table.button.secondary:hover table td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.secondary:active table td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.secondary table td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.success:hover table td {=0D
+background: #39910e;=0D
+}=0D
+table.button.success:hover table a {=0D
+border: 0 solid #39910e;=0D
+}=0D
+table.button.alert:hover table td {=0D
+background: #e23317;=0D
+}=0D
+table.button.alert:hover table a {=0D
+border: 0 solid #e23317;=0D
+}=0D
+table.button.warning:hover table td {=0D
+background: #cc8b00;=0D
+}=0D
+table.button.warning:hover table a {=0D
+border: 0px solid #cc8b00;=0D
+}=0D
+.thumbnail:hover {=0D
+box-shadow: 0 0 6px 1px rgba(9,84,211,0.5);=0D
+}=0D
+.thumbnail:focus {=0D
+box-shadow: 0 0 6px 1px rgba(9,84,211,0.5);=0D
+}=0D
+body.outlook p {=0D
+display: inline !important;=0D
+}=0D
+@media only screen and (max-width: 380px) {=0D
+  img.shrinking-bulk-download-banner {=0D
+    max-width: 250px !important; width: 250px !important;=0D
+  }=0D
+}=0D
+@media only screen and (max-width: 624px) {=0D
+  .small-float-center {=0D
+    margin: 0 auto !important; float: none !important; text-align: center=
+ !important;=0D
+  }=0D
+  .small-text-center {=0D
+    text-align: center !important;=0D
+  }=0D
+  .small-text-left {=0D
+    text-align: left !important;=0D
+  }=0D
+  .small-text-right {=0D
+    text-align: right !important;=0D
+  }=0D
+  .hide-for-large {=0D
+    display: block !important; width: auto !important; overflow: visible =
+!important; max-height: none !important; font-size: inherit !important; l=
+ine-height: inherit !important;=0D
+  }=0D
+  table.body table.container .hide-for-large {=0D
+    display: table !important; width: 100% !important;=0D
+  }=0D
+  table.body table.container .row.hide-for-large {=0D
+    display: table !important; width: 100% !important;=0D
+  }=0D
+  table.body table.container .callout-inner.hide-for-large {=0D
+    display: table-cell !important; width: 100% !important;=0D
+  }=0D
+  table.body table.container .show-for-large {=0D
+    display: none !important; width: 0; mso-hide: all; overflow: hidden;=0D=
+
+  }=0D
+  table.body img {=0D
+    width: auto; height: auto;=0D
+  }=0D
+  table.body center {=0D
+    min-width: 0 !important;=0D
+  }=0D
+  table.body .container {=0D
+    width: 95% !important;=0D
+  }=0D
+  table.body .columns {=0D
+    height: auto !important; box-sizing: border-box; padding-left: 24px !=
+important; padding-right: 24px !important;=0D
+  }=0D
+  table.body .column {=0D
+    height: auto !important; box-sizing: border-box; padding-left: 24px !=
+important; padding-right: 24px !important;=0D
+  }=0D
+  table.body .columns .column {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .columns .columns {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .column .column {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .column .columns {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .collapse .columns {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .collapse .column {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  td.small-1 {=0D
+    display: inline-block !important; width: 8.33333% !important;=0D
+  }=0D
+  th.small-1 {=0D
+    display: inline-block !important; width: 8.33333% !important;=0D
+  }=0D
+  td.small-2 {=0D
+    display: inline-block !important; width: 16.66667% !important;=0D
+  }=0D
+  th.small-2 {=0D
+    display: inline-block !important; width: 16.66667% !important;=0D
+  }=0D
+  td.small-3 {=0D
+    display: inline-block !important; width: 25% !important;=0D
+  }=0D
+  th.small-3 {=0D
+    display: inline-block !important; width: 25% !important;=0D
+  }=0D
+  td.small-4 {=0D
+    display: inline-block !important; width: 33.33333% !important;=0D
+  }=0D
+  th.small-4 {=0D
+    display: inline-block !important; width: 33.33333% !important;=0D
+  }=0D
+  td.small-5 {=0D
+    display: inline-block !important; width: 41.66667% !important;=0D
+  }=0D
+  th.small-5 {=0D
+    display: inline-block !important; width: 41.66667% !important;=0D
+  }=0D
+  td.small-6 {=0D
+    display: inline-block !important; width: 50% !important;=0D
+  }=0D
+  th.small-6 {=0D
+    display: inline-block !important; width: 50% !important;=0D
+  }=0D
+  td.small-7 {=0D
+    display: inline-block !important; width: 58.33333% !important;=0D
+  }=0D
+  th.small-7 {=0D
+    display: inline-block !important; width: 58.33333% !important;=0D
+  }=0D
+  td.small-8 {=0D
+    display: inline-block !important; width: 66.66667% !important;=0D
+  }=0D
+  th.small-8 {=0D
+    display: inline-block !important; width: 66.66667% !important;=0D
+  }=0D
+  td.small-9 {=0D
+    display: inline-block !important; width: 75% !important;=0D
+  }=0D
+  th.small-9 {=0D
+    display: inline-block !important; width: 75% !important;=0D
+  }=0D
+  td.small-10 {=0D
+    display: inline-block !important; width: 83.33333% !important;=0D
+  }=0D
+  th.small-10 {=0D
+    display: inline-block !important; width: 83.33333% !important;=0D
+  }=0D
+  td.small-11 {=0D
+    display: inline-block !important; width: 91.66667% !important;=0D
+  }=0D
+  th.small-11 {=0D
+    display: inline-block !important; width: 91.66667% !important;=0D
+  }=0D
+  td.small-12 {=0D
+    display: inline-block !important; width: 100% !important;=0D
+  }=0D
+  th.small-12 {=0D
+    display: inline-block !important; width: 100% !important;=0D
+  }=0D
+  .columns td.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  .column td.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  .columns th.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  .column th.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  table.body td.small-offset-1 {=0D
+    margin-left: 8.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-1 {=0D
+    margin-left: 8.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-2 {=0D
+    margin-left: 16.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-2 {=0D
+    margin-left: 16.66667% !important;=0D
+  }=0D
+  table.body td.small-offset-3 {=0D
+    margin-left: 25% !important;=0D
+  }=0D
+  table.body th.small-offset-3 {=0D
+    margin-left: 25% !important;=0D
+  }=0D
+  table.body td.small-offset-4 {=0D
+    margin-left: 33.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-4 {=0D
+    margin-left: 33.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-5 {=0D
+    margin-left: 41.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-5 {=0D
+    margin-left: 41.66667% !important;=0D
+  }=0D
+  table.body td.small-offset-6 {=0D
+    margin-left: 50% !important;=0D
+  }=0D
+  table.body th.small-offset-6 {=0D
+    margin-left: 50% !important;=0D
+  }=0D
+  table.body td.small-offset-7 {=0D
+    margin-left: 58.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-7 {=0D
+    margin-left: 58.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-8 {=0D
+    margin-left: 66.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-8 {=0D
+    margin-left: 66.66667% !important;=0D
+  }=0D
+  table.body td.small-offset-9 {=0D
+    margin-left: 75% !important;=0D
+  }=0D
+  table.body th.small-offset-9 {=0D
+    margin-left: 75% !important;=0D
+  }=0D
+  table.body td.small-offset-10 {=0D
+    margin-left: 83.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-10 {=0D
+    margin-left: 83.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-11 {=0D
+    margin-left: 91.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-11 {=0D
+    margin-left: 91.66667% !important;=0D
+  }=0D
+  table.body table.columns td.expander {=0D
+    display: none !important;=0D
+  }=0D
+  table.body table.columns th.expander {=0D
+    display: none !important;=0D
+  }=0D
+  table.body .right-text-pad {=0D
+    padding-left: 10px !important;=0D
+  }=0D
+  table.body .text-pad-right {=0D
+    padding-left: 10px !important;=0D
+  }=0D
+  table.body .left-text-pad {=0D
+    padding-right: 10px !important;=0D
+  }=0D
+  table.body .text-pad-left {=0D
+    padding-right: 10px !important;=0D
+  }=0D
+  table.menu {=0D
+    width: 100% !important;=0D
+  }=0D
+  table.menu td {=0D
+    width: auto !important; display: inline-block !important;=0D
+  }=0D
+  table.menu th {=0D
+    width: auto !important; display: inline-block !important;=0D
+  }=0D
+  table.menu.vertical td {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu.vertical th {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu.small-vertical td {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu.small-vertical th {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu[align=3D"center"] {=0D
+    width: auto !important;=0D
+  }=0D
+  table.button.small-expand {=0D
+    width: 100% !important;=0D
+  }=0D
+  table.button.small-expanded {=0D
+    width: 100% !important;=0D
+  }=0D
+  table.button.small-expand table {=0D
+    width: 100%;=0D
+  }=0D
+  table.button.small-expanded table {=0D
+    width: 100%;=0D
+  }=0D
+  table.button.small-expand table a {=0D
+    text-align: center !important; width: 100% !important; padding-left: =
+0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.button.small-expanded table a {=0D
+    text-align: center !important; width: 100% !important; padding-left: =
+0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.button.small-expand center {=0D
+    min-width: 0;=0D
+  }=0D
+  table.button.small-expanded center {=0D
+    min-width: 0;=0D
+  }=0D
+  .hide-for-large-fix-2-2-2 {=0D
+    display: block !important; width: auto !important; overflow: visible =
+!important; max-height: none !important; font-size: inherit !important; l=
+ine-height: inherit !important;=0D
+  }=0D
+}=0D
+</style></head>=0D
+<body style=3D"width: 100% !important; min-width: 100%; -webkit-text-size=
+-adjust: 100%; -ms-text-size-adjust: 100%; box-sizing: border-box; color:=
+ #000; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text=
+-align: left; line-height: 150%; font-size: 16px; margin: 0; padding: 0;"=
+>=0D
+<table class=3D"body" data-made-with-foundation=3D"" style=3D"border-spac=
+ing: 0; border-collapse: collapse; vertical-align: top; text-align: left;=
+ background-color: #f3f3f3; height: 100%; width: 100%; color: #000; font-=
+family: Helvetica,Arial,sans-serif; font-weight: normal; line-height: 150=
+%; font-size: 16px; margin: 0; padding: 0;"><tr style=3D"vertical-align: =
+top; text-align: left; padding: 0;"><td align=3D"center" class=3D"center"=
+ style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none=
+; hyphens: none; border-collapse: collapse !important; vertical-align: to=
+p; text-align: left; color: #000; font-family: Helvetica,Arial,sans-serif=
+; font-weight: normal; line-height: 150%; font-size: 16px; word-break: br=
+eak-word; margin: 0; padding: 0;"><center style=3D"width: 100%; min-width=
+: 600px;">=0D
+<table class=3D"container--header container float-center" align=3D"center=
+" style=3D"background-color: transparent !important; border-spacing: 0; b=
+order-collapse: collapse; vertical-align: top; text-align: center; width:=
+ 600px; float: none; max-width: 600px; margin: 0 auto; padding: 0;"><tbod=
+y><tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td st=
+yle=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; h=
+yphens: none; border-collapse: collapse !important; vertical-align: top; =
+text-align: left; color: #000; font-family: Helvetica,Arial,sans-serif; f=
+ont-weight: normal; line-height: 150%; font-size: 16px; word-break: break=
+-word; margin: 0; padding: 0;"><table class=3D"row" style=3D"border-spaci=
+ng: 0; border-collapse: collapse; vertical-align: top; text-align: left; =
+width: 100%; position: relative; display: table; padding: 0;"><tbody><tr =
+style=3D"vertical-align: top; text-align: left; padding: 0;"><th class=3D=
+"small-12 large-12 columns first last" style=3D"width: 576px; color: #000=
+; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text-alig=
+n: left; line-height: 150%; font-size: 16px; margin: 0 auto; padding: 0 2=
+4px 0px;"><table style=3D"border-spacing: 0; border-collapse: collapse; v=
+ertical-align: top; text-align: left; width: 100%; padding: 0;"><tr style=
+=3D"vertical-align: top; text-align: left; padding: 0;">=0D
+<th style=3D"color: #000; font-family: Helvetica,Arial,sans-serif; font-w=
+eight: normal; text-align: left; line-height: 150%; font-size: 16px; marg=
+in: 0; padding: 0;"><center data-parsed=3D"" style=3D"width: 100%; min-wi=
+dth: 528px;"><table class=3D"button--noBorder float-center" style=3D"bord=
+er-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: center; width: 100%; float: none; margin: 0px; padding: 0;" align=3D"ce=
+nter"><tr style=3D"vertical-align: top; text-align: left; padding: 0;"><t=
+d style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: non=
+e; hyphens: none; border-collapse: collapse !important; vertical-align: t=
+op; text-align: left; color: #000; font-family: Helvetica,Arial,sans-seri=
+f; font-weight: normal; line-height: 150%; font-size: 16px; word-break: b=
+reak-word; margin: 0; padding: 0;"><table style=3D"border-spacing: 0; bor=
+der-collapse: collapse; vertical-align: top; text-align: left; width: 100=
+%; padding: 0;"><tr style=3D"vertical-align: top; text-align: left; paddi=
+ng: 0;"><td style=3D"background-color: inherit; word-wrap: break-word; -w=
+ebkit-hyphens: none; -ms-hyphens: none; hyphens: none; border-collapse: c=
+ollapse !important; vertical-align: top; text-align: center; color: #fefe=
+fe; font-family: Helvetica,Arial,sans-serif; font-weight: normal; line-he=
+ight: 150%; font-size: 16px; word-break: break-word; margin: 0; padding: =
+0; border: none;"><a style=3D"color: #fefefe; font-family: Helvetica,Aria=
+l,sans-serif; font-weight: bold; text-align: center; line-height: 150%; t=
+ext-decoration: none; font-size: 16px; display: inline-block; border-radi=
+us: 3px; margin: 0; padding: 0px; border: none;" title=3D"Academia.edu" h=
+ref=3D"https://www.academia.edu/t/rKav9-QvyrdSg-bwm7Q6/"><img alt=3D"Acad=
+emia.edu" style=3D"max-width: 265px; width: auto; height: auto; outline: =
+none; text-decoration: none; -ms-interpolation-mode: bicubic; clear: both=
+; display: block; border: none;" src=3D"http://a.academia-assets.com/imag=
+es/emails/inky/Academia.Logo.Shadow.png" /></a></td></tr></table></td></t=
+r></table></center></th>=0D
+<th class=3D"expander" style=3D"visibility: hidden; width: 0; color: #000=
+; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text-alig=
+n: left; line-height: 150%; font-size: 16px; margin: 0; padding: 0;"></th=
+>=0D
+</tr></table></th></tr></tbody></table></td></tr></tbody></table>=0D
+<table style=3D"border-radius: 6px; border-spacing: 0; border-collapse: c=
+ollapse; vertical-align: top; text-align: center; background-color: #fefe=
+fe; width: 600px; float: none; max-width: 600px; margin: 0 auto; padding:=
+ 32px 0 0;" class=3D"container float-center" align=3D"center"><tbody><tr =
+style=3D"vertical-align: top; text-align: left; padding: 0;"><td style=3D=
+"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyphens=
+: none; border-collapse: collapse !important; vertical-align: top; text-a=
+lign: left; color: #000; font-family: Helvetica,Arial,sans-serif; font-we=
+ight: normal; line-height: 150%; font-size: 16px; word-break: break-word;=
+ margin: 0; padding: 0;"><div class=3D"u-pt8x" style=3D"padding-top: 32px=
+ !important;">=0D
+<table class=3D"row" style=3D"border-spacing: 0; border-collapse: collaps=
+e; vertical-align: top; text-align: left; width: 100%; position: relative=
+; display: table; padding: 0;"><tbody><tr style=3D"vertical-align: top; t=
+ext-align: left; padding: 0;"><th class=3D"small-12 large-12 columns firs=
+t last" style=3D"width: 576px; color: #000; font-family: Helvetica,Arial,=
+sans-serif; font-weight: normal; text-align: left; line-height: 150%; fon=
+t-size: 16px; margin: 0 auto; padding: 0 24px 16px;"><table style=3D"bord=
+er-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; width: 100%; padding: 0;"><tr style=3D"vertical-align: top; text-=
+align: left; padding: 0;">=0D
+<th style=3D"color: #000; font-family: Helvetica,Arial,sans-serif; font-w=
+eight: normal; text-align: left; line-height: 150%; font-size: 16px; marg=
+in: 0; padding: 0;"><center style=3D"width: 100%; min-width: 528px;">=0D
+<a href=3D"https://www.academia.edu/keypass/R2JYVURaK2Q5eTIrSDZaSTNxT2gxU=
+HdCV2hFNk9qR2xKWW02N2NEbmFGbz0tLWxQRXprclorZVVHdlN1Z0Vib0t0L1E9PQ=3D=3D--=
+3557f78c87d955a369d4ef843b739dc06ac4593f/t/rKav9-QvyrdSg-bwm7Q6/upgrade?f=
+eature=3Dbd_books&amp;ri=3D4252&amp;trigger=3Dbulk-download-books-drip&am=
+p;upgrade_redirect=3Dhttps%3A%2F%2Fwww.academia.edu%2Ft%2FrKav9-QvyrdSg-b=
+wm7Q6%2Fsearch%3Fauto_bd_books%3Dtrue%26q%3D%252A%26ri_ids%3D4252" align=3D=
+"center" class=3D"float-center" style=3D"color: #0954D3; font-family: Hel=
+vetica,Arial,sans-serif; font-weight: normal; text-align: left; line-heig=
+ht: 150%; text-decoration: none; margin: 0; padding: 0;"><center class=3D=
+"u-mb3x" style=3D"margin-bottom: 12px !important; width: 100%; min-width:=
+ 528px;"><img alt=3D"Bulk Download Books" src=3D"http://a.academia-assets=
+.com/assets/bulk-download-email-8f4e8ce2105d33444212de31112a3ba49e8cfffb7=
+dcb320237442fe8d2e1c132.png" align=3D"center" class=3D"float-center" styl=
+e=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicubi=
+c; width: auto; max-width: 100%; clear: both; display: block; float: none=
+; text-align: center; margin: 0 auto; border: none;" /></center></a><h1 c=
+lass=3D"u-fs16 title u-lineHeight1_5 u-mb3x float-center" style=3D"color:=
+ #333333; font-size: 16px !important; line-height: 1.5 !important; font-f=
+amily: Helvetica,Arial,sans-serif; font-weight: bold; text-align: center;=
+ word-wrap: normal; margin: 0 0 12px; padding: 0;" align=3D"center">=0D
+<center style=3D"width: 100%; min-width: 528px;"></center>Bulk Download 3=
+7 books in Computer Networks.</h1>=0D
+</center></th>=0D
+<th class=3D"expander" style=3D"visibility: hidden; width: 0; color: #000=
+; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text-alig=
+n: left; line-height: 150%; font-size: 16px; margin: 0; padding: 0;"></th=
+>=0D
+</tr></table></th></tr></tbody></table>=0D
+<table class=3D"row" style=3D"border-spacing: 0; border-collapse: collaps=
+e; vertical-align: top; text-align: left; width: 100%; position: relative=
+; display: table; padding: 0;"><tbody><tr style=3D"vertical-align: top; t=
+ext-align: left; padding: 0;"><th class=3D"small-12 large-12 columns firs=
+t last" style=3D"width: 576px; color: #000; font-family: Helvetica,Arial,=
+sans-serif; font-weight: normal; text-align: left; line-height: 150%; fon=
+t-size: 16px; margin: 0 auto; padding: 0 24px 16px;"><table style=3D"bord=
+er-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; width: 100%; padding: 0;"><tr style=3D"vertical-align: top; text-=
+align: left; padding: 0;">=0D
+<th style=3D"color: #000; font-family: Helvetica,Arial,sans-serif; font-w=
+eight: normal; text-align: left; line-height: 150%; font-size: 16px; marg=
+in: 0; padding: 0;"><center style=3D"width: 100%; min-width: 528px;"><tab=
+le class=3D"large radius u-pb0x button float-center" align=3D"center" sty=
+le=3D"border-spacing: 0; border-collapse: collapse; vertical-align: top; =
+text-align: center; float: none; width: auto; margin: 0 0 16px; padding: =
+0 0 0px;"><tr style=3D"vertical-align: top; text-align: left; padding: 0;=
+"><td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens:=
+ none; hyphens: none; border-collapse: collapse !important; vertical-alig=
+n: top; text-align: left; color: #000; font-family: Helvetica,Arial,sans-=
+serif; font-weight: normal; line-height: 150%; font-size: 16px; word-brea=
+k: break-word; margin: 0; padding: 0;"><table style=3D"border-spacing: 0;=
+ border-collapse: collapse; vertical-align: top; text-align: left; width:=
+ 100%; padding: 0;"><tr style=3D"vertical-align: top; text-align: left; p=
+adding: 0;"><td style=3D"word-wrap: break-word; -webkit-hyphens: none; -m=
+s-hyphens: none; hyphens: none; border-collapse: collapse !important; ver=
+tical-align: top; text-align: left; color: #fefefe; font-family: Helvetic=
+a,Arial,sans-serif; font-weight: normal; line-height: 150%; font-size: 16=
+px; background-color: #0954D3; border-radius: 3px; word-break: break-word=
+; margin: 0; padding: 0; border: 2px none #0954d3;"><a href=3D"https://ww=
+w.academia.edu/keypass/R2JYVURaK2Q5eTIrSDZaSTNxT2gxUHdCV2hFNk9qR2xKWW02N2=
+NEbmFGbz0tLWxQRXprclorZVVHdlN1Z0Vib0t0L1E9PQ=3D=3D--3557f78c87d955a369d4e=
+f843b739dc06ac4593f/t/rKav9-QvyrdSg-bwm7Q6/upgrade?feature=3Dbd_books&amp=
+;ri=3D4252&amp;trigger=3Dbulk-download-books-drip&amp;upgrade_redirect=3D=
+https%3A%2F%2Fwww.academia.edu%2Ft%2FrKav9-QvyrdSg-bwm7Q6%2Fsearch%3Fauto=
+_bd_books%3Dtrue%26q%3D%252A%26ri_ids%3D4252" style=3D"color: #fefefe; fo=
+nt-family: Helvetica,Arial,sans-serif; font-weight: bold; text-align: lef=
+t; line-height: 150%; text-decoration: none; font-size: 20px; display: in=
+line-block; border-radius: 3px; margin: 0; padding: 12px 20px; border: 0 =
+solid #0954d3;"><span class=3D"u-fw500" style=3D"font-size: 18px; font-we=
+ight: 500 !important;">Bulk Download Now =E2=96=B8</span></a></td></tr></=
+table></td></tr></table></center></th>=0D
+<th class=3D"expander" style=3D"visibility: hidden; width: 0; color: #000=
+; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text-alig=
+n: left; line-height: 150%; font-size: 16px; margin: 0; padding: 0;"></th=
+>=0D
+</tr></table></th></tr></tbody></table>=0D
+</div></td></tr></tbody></table>=0D
+<br align=3D"center" class=3D"float-center" /><table class=3D"spacer floa=
+t-center" align=3D"center" style=3D"border-spacing: 0; border-collapse: c=
+ollapse; vertical-align: top; text-align: center; width: 100%; float: non=
+e; margin: 0 auto; padding: 0;"><tbody><tr style=3D"vertical-align: top; =
+text-align: left; padding: 0;"><td height=3D"40" style=3D"font-size: 40px=
+; line-height: 40px; word-wrap: break-word; -webkit-hyphens: none; -ms-hy=
+phens: none; hyphens: none; border-collapse: collapse !important; vertica=
+l-align: top; text-align: left; mso-line-height-rule: exactly; color: #00=
+0; font-family: Helvetica,Arial,sans-serif; font-weight: normal; word-bre=
+ak: break-word; margin: 0; padding: 0;">=C2=A0</td></tr></tbody></table>=0D=
+
+<table class=3D"container--footer container float-center" align=3D"center=
+" style=3D"background-color: transparent !important; border-spacing: 0; b=
+order-collapse: collapse; vertical-align: top; text-align: center; width:=
+ 600px; float: none; max-width: 600px; margin: 0 auto; padding: 0;"><tbod=
+y><tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td st=
+yle=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; h=
+yphens: none; border-collapse: collapse !important; vertical-align: top; =
+text-align: left; color: #000; font-family: Helvetica,Arial,sans-serif; f=
+ont-weight: normal; line-height: 150%; font-size: 16px; word-break: break=
+-word; margin: 0; padding: 0;"><table class=3D"row" style=3D"border-spaci=
+ng: 0; border-collapse: collapse; vertical-align: top; text-align: left; =
+width: 100%; position: relative; display: table; padding: 0;"><tbody><tr =
+style=3D"vertical-align: top; text-align: left; padding: 0;"><th class=3D=
+"small-12 large-12 columns first last" style=3D"width: 576px; color: #000=
+; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text-alig=
+n: left; line-height: 150%; font-size: 16px; margin: 0 auto; padding: 0 2=
+4px 16px;"><table style=3D"border-spacing: 0; border-collapse: collapse; =
+vertical-align: top; text-align: left; width: 100%; padding: 0;"><tr styl=
+e=3D"vertical-align: top; text-align: left; padding: 0;">=0D
+<th style=3D"color: #000; font-family: Helvetica,Arial,sans-serif; font-w=
+eight: normal; text-align: left; line-height: 150%; font-size: 16px; marg=
+in: 0; padding: 0;">=0D
+<br /><p class=3D"text-center u-fs11 u-tcGrayDark" style=3D"font-size: 11=
+px !important; color: #999 !important; text-align: center; font-family: H=
+elvetica,Arial,sans-serif; font-weight: normal; line-height: 150%; margin=
+: 0 0 10px; padding: 0;"><a style=3D"color: #999; font-family: Helvetica,=
+Arial,sans-serif; font-weight: normal; text-align: left; line-height: 150=
+%; text-decoration: none; margin: 0; padding: 0;">580 California St., Sui=
+te 400, San Francisco, CA, 94104</a></p>=0D
+<p class=3D"text-center u-fs11" style=3D"font-size: 11px !important; text=
+-align: center; color: #000; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;"><a cl=
+ass=3D"u-linkUnstyled u-tcGrayDark" target=3D"_blank" href=3D"https://aca=
+demia.edu/keypass/R2JYVURaK2Q5eTIrSDZaSTNxT2gxUHdCV2hFNk9qR2xKWW02N2NEbmF=
+Gbz0tLWxQRXprclorZVVHdlN1Z0Vib0t0L1E9PQ=3D=3D--3557f78c87d955a369d4ef843b=
+739dc06ac4593f/t/rKav9-QvyrdSg-bwm7Q6/confirm_unsubscribe/premium_content=
+" style=3D"color: #999 !important; font-family: Helvetica,Arial,sans-seri=
+f; font-weight: normal; text-align: left; line-height: 150%; text-decorat=
+ion: none; margin: 0; padding: 0;">Unsubscribe</a>=C2=A0=C2=A0 <a class=3D=
+"u-linkUnstyled u-tcGrayDark" href=3D"https://www.academia.edu/t/rKav9-Qv=
+yrdSg-bwm7Q6/privacy" target=3D"_blank" style=3D"color: #999 !important; =
+font-family: Helvetica,Arial,sans-serif; font-weight: normal; text-align:=
+ left; line-height: 150%; text-decoration: none; margin: 0; padding: 0;">=
+Privacy=C2=A0Policy</a>=C2=A0=C2=A0 <a class=3D"u-linkUnstyled u-tcGrayDa=
+rk" href=3D"https://www.academia.edu/t/rKav9-QvyrdSg-bwm7Q6/terms" target=
+=3D"_blank" style=3D"color: #999 !important; font-family: Helvetica,Arial=
+,sans-serif; font-weight: normal; text-align: left; line-height: 150%; te=
+xt-decoration: none; margin: 0; padding: 0;">Terms=C2=A0of=C2=A0Service</=
+a>=C2=A0=C2=A0 </p>=0D
+<p class=3D"text-center u-tcGrayDark u-fs11" style=3D"font-size: 11px !im=
+portant; color: #999 !important; text-align: center; font-family: Helveti=
+ca,Arial,sans-serif; font-weight: normal; line-height: 150%; margin: 0 0 =
+10px; padding: 0;"><span>=C2=A9=C2=A02022=C2=A0Academia</span></p>=0D
+</th>=0D
+<th class=3D"expander" style=3D"visibility: hidden; width: 0; color: #000=
+; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text-alig=
+n: left; line-height: 150%; font-size: 16px; margin: 0; padding: 0;"></th=
+>=0D
+</tr></table></th></tr></tbody></table></td></tr></tbody></table>=0D
+</center></td></tr></table>=0D
+<div style=3D"display: none; white-space: nowrap; font: 15px courier;"> =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0</div>=0D
+<img border=3D"0" height=3D"1" src=3D"https://www.academia.edu/t/rKav9-Qv=
+yrdSg-bwm7Q6/images/clear.gif" width=3D"1" style=3D"outline: none; text-d=
+ecoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width:=
+ 100%; clear: both; display: block;" />=0D
+</body>=0D
+</html>=0D
+
+----==_mimepart_62ebcfb04321f_134670683514--
